@@ -1,0 +1,25 @@
+<form [formGroup]="formGroup">
+
+</form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Student Id</th>
+      <th scope="col">FirstName</th>
+      <th scope="col">LastName</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students">
+      <td>{{student.studentId}}</td>
+      <td>{{student.firstName}}</td>
+      <td>{{student.lastName}}</td>
+      <td>
+        <button class="btn btn-primary">edit</button>
+        <button class="btn btn-danger">delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
