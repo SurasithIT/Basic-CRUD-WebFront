@@ -20,7 +20,7 @@
     </div>
     <div class="col-4">
       <div class="form-group">
-        <label for="lastName">FirstName <span class="text-danger">*</span></label>
+        <label for="lastName">LastName <span class="text-danger">*</span></label>
         <input type="text" class="form-control" id="lastName" placeholder="Enter LastName" formControlName="lastName">
       </div>
       <span class="text-danger" *ngIf="submitted && formGroup.controls['lastName']?.errors">This field is
