@@ -1,5 +1,37 @@
-<form [formGroup]="formGroup">
-
+<form [formGroup]="formGroup" (submit)="addStudent()">
+  <div class="row">
+    <div class="col-4">
+      <div class="form-group">
+        <label for="studentId">Student Id <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="studentId" placeholder="Enter Student Id"
+          formControlName="studentId">
+      </div>
+      <span class="text-danger" *ngIf="submitted && formGroup.controls['studentId']?.errors">This field is
+        required</span>
+    </div>
+    <div class="col-4">
+      <div class="form-group">
+        <label for="firstName">FirstName <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="firstName" placeholder="Enter FirstName"
+          formControlName="firstName">
+      </div>
+      <span class="text-danger" *ngIf="submitted && formGroup.controls['firstName']?.errors">This field is
+        required</span>
+    </div>
+    <div class="col-4">
+      <div class="form-group">
+        <label for="lastName">FirstName <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="lastName" placeholder="Enter LastName" formControlName="lastName">
+      </div>
+      <span class="text-danger" *ngIf="submitted && formGroup.controls['lastName']?.errors">This field is
+        required</span>
+    </div>
+  </div>
+  <div class="row justify-content-end mt-3">
+    <div class="col-3">
+      <button type="submit" class="btn btn-primary w-100">Add Student</button>
+    </div>
+  </div>
 </form>
 
 <table class="table">
@@ -17,8 +49,8 @@
       <td>{{student.firstName}}</td>
       <td>{{student.lastName}}</td>
       <td>
-        <button class="btn btn-primary">edit</button>
-        <button class="btn btn-danger">delete</button>
+        <!-- <button class="btn btn-primary" (click)="editStudent(student.studentKey, student)">edit</button> -->
+        <button class="btn btn-danger" (click)="deleteStudent(student.studentKey)">delete</button>
       </td>
     </tr>
   </tbody>
